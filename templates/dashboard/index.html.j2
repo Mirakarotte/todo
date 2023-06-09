@@ -1,0 +1,86 @@
+{% extends 'partials/base.html.j2' %} <br />
+{% block title %} Accueil {% endblock %} <br>
+{% block content %} 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header">Statistiques</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h6>Total</h6>
+                                    <p class="text-center">10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h6>Fait</h6>
+                                    <p class="text-center">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h6>Pas encore fait</h6>
+                                    <p class="text-center">5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Formulaire des tâches</div>
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <label for="">Titre</label>
+                        <input
+								type="text"
+								name="title"
+								class="form-control"
+								placeholder="Ajouter une tâche..."
+						/>
+                        <input 
+                            class="btn btn-primary mt-2 btn-sm" 
+                            type="submit" 
+                            value="Ajouter"
+                        />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border border-5 mt-3 shadow">
+        <div class="card-body">
+            <h5>1 | Learn Python</h5>
+            <span class="badge bg-success">Fait</span>
+            <a class="btn btn-info btn-sm" href="">Modifier</a>
+            <a class="btn btn-danger btn-sm" href="">Supprimer</a>
+        </div>
+    </div>
+    <div class="border border-5 mt-3 shadow">
+        <div class="card-body">
+            <h5>1 | Learn Python</h5>
+            <span class="badge bg-success">Fait</span>
+            <a class="btn btn-info btn-sm" href="">Modifier</a>
+            <a class="btn btn-danger btn-sm" href="">Supprimer</a>
+        </div>
+    </div>
+    <div class="border border-5 mt-3 shadow">
+        <div class="card-body">
+            <h5>1 | Learn Python</h5>
+            <span class="badge bg-success">Fait</span>
+            <a class="btn btn-info btn-sm" href="">Modifier</a>
+            <a class="btn btn-danger btn-sm" href="">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
