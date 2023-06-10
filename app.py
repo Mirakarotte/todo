@@ -11,6 +11,9 @@ class todo(db.Model):
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean, default=False)
 
+with app.app_context():
+    db.create_all()
+
 @app.route('/')
 def index():
     return render_template('dashboard/index.html.j2')
