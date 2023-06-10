@@ -19,12 +19,16 @@ def index():
     todo_list = todo.query.all()
     return render_template('dashboard/index.html.j2', todo_list=todo_list)
 
-@app.route('/add', methods=['POST'])
-def add():
+@app.route('/ajouter', methods=['POST'])
+def ajouter():
     title = request.form.get('title')
     new_todo = todo(title=title, complete=False)
     db.session.add(new_todo)
     db.session.commit() 
+    return redirect(url_for('index'))
+
+@app.route('/supprimer')
+def supprimer():
     return redirect(url_for('index'))
 
 @app.route('/a_propos')
